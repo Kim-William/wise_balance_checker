@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wise Balance Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .amount-positive { color: green; }
+        .amount-negative { color: red; }
+        .balance-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @media (max-width: 576px) {
+            .desktop-only { display: none; }
+        }
+        @media (min-width: 577px) {
+            .mobile-only { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-light">
+<div class="container py-4">
+    <!-- Header -->
+    <div class="mb-4">
+        <h2 class="text-center">Dashboard</h2>
+        <p class="text-center text-muted" id="user-role">Guest Mode</p>
+    </div>
+
+    <!-- Balance Section -->
+    <div class="card mb-4">
+        <div class="card-body balance-box">
+            <div>
+                <h5>Current Balance:</h5>
+                <h3 id="current-balance">€1,234.56</h3>
+            </div>
+            <button class="btn btn-outline-primary">Update Balance</button>
+        </div>
+    </div>
+
+    <!-- Transactions Section -->
+    <div class="card">
+        <div class="card-body">
+            <h5>Recent Transactions</h5>
+            <div class="mb-2">
+                <button class="btn btn-sm btn-outline-secondary me-2">1 week</button>
+                <button class="btn btn-sm btn-outline-secondary">1 month</button>
+            </div>
+
+            <!-- Desktop Table -->
+            <div class="table-responsive desktop-only">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th class="text-end">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-list-desktop">
+                        <tr><td>2024-04-23</td><td>Payment</td><td class="text-end amount-negative">-45.67</td></tr>
+                        <tr><td>2024-04-21</td><td>Deposit</td><td class="text-end amount-positive">+200.00</td></tr>
+                        <tr><td>2024-04-18</td><td>Withdrawal</td><td class="text-end amount-negative">-100.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Table -->
+            <div class="mobile-only">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <div><strong>2024-04-23</strong></div>
+                            <div>Payment</div>
+                        </div>
+                        <div class="amount-negative">-45.67</div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <div><strong>2024-04-21</strong></div>
+                            <div>Deposit</div>
+                        </div>
+                        <div class="amount-positive">+200.00</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text-end mt-3">
+                <a href="#" class="text-decoration-none">View More</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
