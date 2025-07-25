@@ -3,3 +3,6 @@
 app/core/config.py
 **/__pycache__/
 *.py[cod]
+.env
+app/core/config.py
+app/core/__pycache__/config.cpython-39.pyc
