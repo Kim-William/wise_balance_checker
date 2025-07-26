@@ -6,3 +6,8 @@ app/core/config.py
 .env
 app/core/config.py
 app/core/__pycache__/config.cpython-39.pyc
+data/keys.json
+data/logs/fallback_access.log
+data/logs/fallback_error.log
+data/database.sqlite
+app/__pycache__/main.cpython-39.pyc

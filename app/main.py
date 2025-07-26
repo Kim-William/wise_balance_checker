@@ -9,7 +9,7 @@ from app.services.wise import get_balance
 app = FastAPI(title="Wise Balance Checker")
 templates = Jinja2Templates(directory="app/templates")
 
-@app.get("/dashboard", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse)
 async def show_dashboard(request: Request):
     balance_data = await get_balance()
     
